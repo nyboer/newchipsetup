@@ -1,0 +1,1 @@
+cat afpdservice.xml | sudo tee -a /etc/avahi/services/afpd.service
