@@ -1,6 +1,6 @@
 # Setting up a fresh C.H.I.P
 
-When I setup a CHIP with a new OS, I want to be able to easily ssh into it. This means setting up a key for password-less login and giving CHIP a new name. I've done this so many times, I finally setup a script and some files.
+When I setup a CHIP with a new OS, I want to be able to easily ssh into it. This means setting up a key for password-less login and giving CHIP a new hostname. I've done this so many times, I finally setup a script and some files.
 This is primarily for working with CHIP from an OS X machine, though most of this stuff should work nicely with a linux computer, too.
 
 ## Get CHIP on the network
@@ -25,7 +25,7 @@ Go back to the OS X terminal and make a key and copy it, along with all the scri
 ```
 ./keymake.sh
 ```
-You'll be asked for CHIP's password.
+You'll be asked for CHIP's password. If your computer can't find "chip.local" on the network, you can call the script with an argument with the IP address (or another name), such as `./keymake.sh 192.168.1.34`.
 
 ## Now on CHIP
 
@@ -33,11 +33,11 @@ Login to C.H.I.P.:
 ```
 ssh chip@chip.local
 ```
-where you can set up the key with
+where you can set copy the key to the right place by running this script on CHIP:
 ```
 ./keyset.sh
 ```
-Once the key is setup, you can rename chip with this command, where you add your new name as an argument:
+Once the key is setup, you can rename "chip" with this command, where you add your new name as an argument:
 ```
 ./rename.sh (new name)
 ```
