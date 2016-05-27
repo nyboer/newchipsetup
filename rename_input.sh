@@ -4,5 +4,6 @@
 
 echo "What's C.H.I.P's new name?"
 read new
-sudo sed -i "s/chip/${new}/g" /etc/hostname
-sudo sed -i "s/chip/${new}/g" /etc/hosts
+OLD=$(hostname)
+sudo sed -i "s/${OLD}/${new}/g" /etc/hostname
+sudo sed -i "s/${OLD}/${new}/g" /etc/hosts

@@ -4,11 +4,11 @@
 # then run 
 #   ./rename.sh <newname> and ./keyset.sh on CHIP
 
-# call this with an argument for the new name or two args for newname and oldname
+# call this with an argument for the new name
 
 new=${1:-toto}
-old=${2:-chip}
+OLD=$(hostname)
 echo $new
 echo $old
-sudo sed -i "s/${old}/${new}/g" /etc/hostname
-sudo sed -i "s/${old}/${new}/g" /etc/hosts
+sudo sed -i "s/${OLD}/${new}/g" /etc/hostname
+sudo sed -i "s/${OLD}/${new}/g" /etc/hosts
