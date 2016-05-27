@@ -47,5 +47,8 @@ Finally, you can add afp services running this script:
 ```
 ./addafp.sh
 ```
-
+If you want to clean up your home directory on CHIP, run this command to get rid of all these scripts:
+```
+rm	afpdservice.xml	keyset.sh	rename_input.sh addafp.sh	rename.sh
+```
 
