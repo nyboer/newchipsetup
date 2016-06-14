@@ -1,0 +1,1 @@
+rm addafp.sh afpdservice.xml keyset.sh rename.sh rename_input.sh cleanup.sh
