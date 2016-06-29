@@ -8,7 +8,7 @@
 
 new=${1:-toto}
 OLD=$(hostname)
-echo $new
+echo "New name for chip is ${new}"
 echo $old
 sudo sed -i "s/${OLD}/${new}/g" /etc/hostname
 sudo sed -i "s/${OLD}/${new}/g" /etc/hosts
