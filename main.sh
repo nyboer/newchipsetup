@@ -6,6 +6,8 @@
 
 # call this with an argument for the new name
 
+./keyset.sh
+
 echo "What's C.H.I.P's new name?"
 read new
 OLD=$(hostname)
@@ -22,7 +24,7 @@ esac
 
 read -p "Do you want to install the dev packages? [y,n]" ans
 case $ans in  
-  y|Y) ./dev ;; 
+  y|Y) ./dev.sh ;; 
   n|N) echo " no" ;; 
   *) echo "ok, assuming no" ;; 
 esac
