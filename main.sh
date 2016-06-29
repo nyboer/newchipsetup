@@ -6,6 +6,7 @@
 
 # call this with an argument for the new name
 
+echo "adding key to CHIP"
 ./keyset.sh
 
 echo "What's C.H.I.P's new name?"
