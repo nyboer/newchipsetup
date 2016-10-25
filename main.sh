@@ -30,6 +30,14 @@ case $ans in
   *) echo "ok, assuming no" ;; 
 esac
 
+read  -p "Do you want to install puredata (about 100MB)? [y,n]" ans
+case $ans in  
+  y|Y) ./puredata.sh ;; 
+  n|N) echo " no" ;; 
+  *) echo " ok, assuming no" ;; 
+esac
+
+
 read  -p "Do you want to add AFP services? [y,n]" ans
 case $ans in  
   y|Y) ./addafp.sh ;; 
