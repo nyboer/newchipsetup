@@ -28,7 +28,7 @@ You might want to get the IP address on `wlan0` at this point:
 ip a
 ```
 
-but for the most part we're going to assume only one C.H.I.P. is on your network and it's reasonable to `ssh` to `chip@chip.local`.
+If you don't get the IP address and only one C.H.I.P. is on your network, it's reasonable to `ssh` to `chip@chip.local`.
 
 ## Make a Key on your Mac and Move Files to C.H.I.P.
 
@@ -43,14 +43,14 @@ You'll be asked for C.H.I.P.'s password. If your computer can't find "chip.local
 ## Now on C.H.I.P.
 
 ### All-in-one
-Login to C.H.I.P. (or use a monitor, mouse, and keyboard and use Terminal) :
+Once the key is made and scripts copied to C.H.I.P., the script will ask for chip's password to login and ssh to C.H.I.P. (You could alternatively use a monitor, mouse, and keyboard and use Terminal) :
 
 ```
 ssh chip@chip.local
 cd ~/
 ```
 
-Now you can run the `main.sh` script to put the key in the right place, setup a new name, and, optionally: setup a new password, install a bunch of development packages, add afp services, and cleanup after yourself:
+Now you can run the `main.sh` script to put the key in the right place, setup a new name, and, optionally: setup a new password, install a bunch of development packages, install [http://puredata.org](PureData), add afp services, and cleanup after yourself:
 
 ```
 ./main.sh
@@ -82,6 +82,11 @@ You can add afp services running this script:
 ```
 ./addafp.sh
 
+```
+
+Add the graphical music and media programming language PureData!
+```
+./puredata.sh
 ```
 
 Finally, If you want to clean up your home directory on C.H.I.P., run this command to get rid of all these scripts:

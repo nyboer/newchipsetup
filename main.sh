@@ -23,31 +23,46 @@ case $ans in
   *) echo " ok, assuming no" ;; 
 esac
 
-read -p "Do you want to install the dev packages? [y,n]" ans
-case $ans in  
+DEV="n"
+PD="n"
+AFP="n"
+CLEAN="n"
+
+echo "Here's some questions. After you answer, I'll get to work:"
+
+read -p "Do you want to install the dev packages? [y,n]" DEV
+echo $DEV
+read  -p "Do you want to install puredata (about 100MB)? [y,n]" PD
+echo $PD
+read  -p "Do you want to add AFP services? [y,n]" AFP
+echo $AFT
+read  -p "Do you want to cleanup and delete all these scripts? [y,n]" CLEAN
+echo $CLEAN
+
+echo "Now the work begins!"
+
+case $DEV in  
   y|Y) ./dev.sh ;; 
   n|N) echo " no" ;; 
   *) echo "ok, assuming no" ;; 
 esac
 
-read  -p "Do you want to install puredata (about 100MB)? [y,n]" ans
-case $ans in  
+case $PD in  
   y|Y) ./puredata.sh ;; 
   n|N) echo " no" ;; 
   *) echo " ok, assuming no" ;; 
 esac
 
-
-read  -p "Do you want to add AFP services? [y,n]" ans
-case $ans in  
+case $AFP in  
   y|Y) ./addafp.sh ;; 
   n|N) echo " no" ;; 
   *) echo " ok, assuming no" ;; 
 esac
 
-read  -p "Do you want to cleanup and delete all these scripts? [y,n]" ans
-case $ans in  
+case $CLEAN in  
   y|Y) ./cleanup.sh ;; 
   n|N) echo " no" ;; 
   *) echo " ok, assuming no" ;; 
 esac
+
+echo "Congratulations, your C.H.I.P. is set up to do awesome stuff!"
