@@ -27,6 +27,7 @@ DEV="n"
 PD="n"
 AFP="n"
 CLEAN="n"
+LOC="n"
 
 echo "Here's some questions. After you answer, I'll get to work:"
 
@@ -38,31 +39,41 @@ read  -p "Do you want to add AFP services? [y,n]" AFP
 echo $AFT
 read  -p "Do you want to cleanup and delete all these scripts? [y,n]" CLEAN
 echo $CLEAN
+read  -p "Do you want to setup the US locale? [y,n]" LOC
+echo $LOC
+
 
 echo "Now the work begins!"
 
 case $DEV in  
   y|Y) ./dev.sh ;; 
-  n|N) echo " no" ;; 
+  n|N) echo " no dev tools" ;; 
   *) echo "ok, assuming no" ;; 
 esac
 
 case $PD in  
   y|Y) ./puredata.sh ;; 
-  n|N) echo " no" ;; 
+  n|N) echo " no puredata " ;; 
   *) echo " ok, assuming no" ;; 
 esac
 
 case $AFP in  
   y|Y) ./addafp.sh ;; 
-  n|N) echo " no" ;; 
+  n|N) echo " no afp services" ;; 
   *) echo " ok, assuming no" ;; 
 esac
 
 case $CLEAN in  
   y|Y) ./cleanup.sh ;; 
-  n|N) echo " no" ;; 
+  n|N) echo " no cleanup " ;; 
   *) echo " ok, assuming no" ;; 
 esac
+
+case $LOC in  
+  y|Y) sudo locale-gen --purge en_US.UTF-8 ;; 
+  n|N) echo " no local gen - just run sudo locale-gen on your own" ;; 
+  *) echo " ok, assuming no" ;; 
+esac
+
 
 echo "Congratulations, your C.H.I.P. is set up to do awesome stuff!"
