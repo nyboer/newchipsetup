@@ -51,6 +51,14 @@ case $DEV in
   *) echo "ok, assuming no" ;; 
 esac
 
+case $key in  
+  y|Y) ./setupkeys.sh ;; 
+  n|N) echo " no key setup" ;; 
+  *) echo "ok, assuming no" ;; 
+esac
+
+
+
 case $PD in  
   y|Y) ./puredata.sh ;; 
   n|N) echo " no puredata " ;; 
